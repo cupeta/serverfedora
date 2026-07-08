@@ -55,7 +55,7 @@ dnf -y install steam lutris heroic-games-launcher lact goverlay mangohud mangohu
 dnf -y install prismlauncher
 
 #sunshine
-dnf copr enable -y lizardbyte/stable fedora-44-x86_64
+dnf copr enable -y lizardbyte/stable
 dnf -y install sunshine
 
 #moonlight
