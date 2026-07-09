@@ -15,85 +15,17 @@ chmod +x /etc/profile.d/opt-bin_path.sh
 # SYSTEM APPS
 # fuse2 libs for some AppImages to work correctly
 dnf -y install fuse-libs
-# power settings\battery managment for laptops
-dnf -y install power-profiles-daemon  --allowerasing
 # cifs-utils for samba mounts
 dnf -y install cifs-utils
 # Tailscale for private vpn
 dnf -y install tailscale
 
-# nvtop for monitoring nvidia gpu
-dnf -y install nvtop
-
-# DESKTOP ENVIRONMENT
-# ly greeter
-bash /ctx/ly.sh
-# Hyprland window manager
-bash /ctx/hyprland.sh
-# waybar
-dnf -y install waybar
-# wofi (menu and app launcher)
-dnf -y install wofi
-# gtk customization tool
-dnf -y install nwg-look
-
-# DESKTOP APPS
-# terminal
-dnf -y install ghostty
-# file manager
-dnf -y install pcmanfm
-# ark for opening archives
-dnf -y install ark 7zip unrar
-# web browser
-dnf -y install firefox
-# audio utils
-dnf -y install qpwgraph easyeffects vlc
-# office & productiviy
-dnf -y install libreoffice homebank galculator telegram-desktop
-# graphic design & photo editing
-dnf -y install inkscape gimp
-# kmonad for keyboard macros
-dnf -y install kmonad
-
-# REMOTE DEKSTOP
-# Sunshine (server)
-dnf copr enable -y lizardbyte/stable
-dnf -y install sunshine
-# Moonlight (client)
-bash /ctx/moonlight.sh
 
 # CODING & DEV TOOLS
 # setup lua (RakuOS seems to force overlay install for luarocks...?)
 # bash /ctx/lua.sh
 # cosign for OCI image signing
 bash /ctx/cosign.sh
-
-# MUSIC PRODUCTION
-# ycollect/audinux repo with many audio plugins
-dnf -y copr enable ycollet/audinux
-# fix for apps loking for libjack.so in /usr/lib64
-ln -s /usr/lib64/pipewire-0.3/jack/libjack.so.0 /usr/lib64/libjack.so
-# libraries for some lv2\clap plugins to work
-dnf -y install juce zenity
-# DAW plugins
-dnf -y install sfizz-ui guitarix lsp-plugins
-# install Musescore music sheet editor
-bash /ctx/musescore.sh
-# install Reaper
-bash /ctx/reaper.sh
-# install shoopdaloop looper
-bash /ctx/shoopdaloop.sh
-
-# VIDEO EDITING
-#f ully-featured ffmpeg & OBS with nonfree components from rpm fusion (from morrolinux/morros)
-dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf -y install ffmpeg x264-libs obs-studio obs-studio-plugin-x264 --allowerasing
-
-# GAMING
-# packages copied from rakuos setup-gaming
-dnf -y install steam lutris heroic-games-launcher lact goverlay mangohud mangohud.i686 protonplus protontricks vkBasalt vkBasalt.i686
-# Prismlauncher for Minecraft
-dnf -y install prismlauncher
 
 #POST INSTALL
 # enable systemd units
