@@ -4,7 +4,7 @@ COPY build_files /
 COPY system_files /system_files
 
 # Base Image
-FROM quay.io/rakuos/rakuos-base-nvidia
+FROM quay.io/rakuos/rakuos-base
 RUN sed -i 's/^ID=.*/ID=fedora/' /etc/os-release
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:testing
