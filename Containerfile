@@ -4,8 +4,8 @@ COPY build_files /
 COPY system_files /system_files
 
 # Base Image
-FROM quay.io/fedora/fedora-coreos
-#RUN sed -i 's/^ID=.*/ID=fedora/' /etc/os-release
+FROM ghcr.io/ublue-os/ucore
+RUN sed -i 's/^ID=.*/ID=fedora/' /etc/os-release
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:testing
 # FROM ghcr.io/ublue-os/aurora:stable
