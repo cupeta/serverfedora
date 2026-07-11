@@ -5,7 +5,7 @@ COPY system_files /system_files
 
 # Base Image
 FROM quay.io/fedora/fedora-bootc:44
-RUN sed -i 's/^ID=.*/ID=fedora/' /etc/os-release
+#RUN sed -i 's/^ID=.*/ID=fedora/' /etc/os-release
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:testing
 # FROM ghcr.io/ublue-os/aurora:stable
@@ -25,7 +25,7 @@ RUN sed -i 's/^ID=.*/ID=fedora/' /etc/os-release
 ## Uncomment the following line if one desires to make /opt immutable and be able to be used
 ## by the package manager.
 
-RUN rm /opt && mkdir /opt
+#RUN rm /opt && mkdir /opt
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
